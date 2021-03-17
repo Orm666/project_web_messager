@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "orm",
+    "password": 1234,
+    "database": "app",
+    "host": "db",
+    "dialect": "postgres"
+  },
+  "test": {
+    "username": "orm",
+    "password": 1234,
+    "database": "db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  },
+  "production": {
+    "username": "orm",
+    "password": 1234,
+    "database": "db",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
+  }
+}

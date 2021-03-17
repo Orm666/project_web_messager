@@ -1,0 +1,873 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+
+/*======GLOBAL STYLES========*/
+
+body {
+    margin: 0;
+    font-family: Roboto, serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+
+    overflow-x: hidden;
+}
+
+.Wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+
+    margin: 0 auto;
+    width: 100vw;
+    min-height: 100vh;
+
+    background-color: #282a36;
+    color: #f8f8f2;
+}
+
+.wrapper_content {
+    min-height: 85vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+
+/*=====HEADER========*/
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    width: 100vw;
+    min-height: 10vh;
+
+
+}
+
+.btn, .btn_width {
+    margin: 1vh 2vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn button, .btn_width button {
+    width: 192px;
+    height: 64px;
+    color: #f8f8f2;
+    background: none;
+    -webkit-appearance: none;
+    appearance: none;
+    text-decoration: none;
+    font-size: 32px;
+    font-weight: 700;
+    border: none;
+
+    margin: 0;
+    padding: 0;
+
+    transition: 0.2s ease-in-out;
+}
+
+.btn button:hover, .btn_width button:hover {
+    border-bottom: 4px solid #f8f8f2;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1280px) {
+    /* Adaptive header links */
+    .header .btn button {
+        width: 192px;
+        height: 32px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    /* Adaptive header links */
+    .header .btn button {
+        width: 128px;
+        height: 32px;
+        font-size: 24px;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    /* Adaptive header links */
+    .header .btn {
+        width: 60vw;
+        height: 64px;
+    }
+
+    .header .btn button {
+        width: 192px;
+        height: 32px;
+        font-size: 24px;
+    }
+}
+
+/*=====FOOTER========*/
+
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: #373F47;
+    color: #C3C9E9;
+
+    height: 5vh;
+    width: 100vw;
+}
+
+
+.footer .links a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #C3C9E9;
+}
+
+.footer .links a:hover {
+    color: #6C91C2;
+}
+
+.footer p {
+    font-size: 12px;
+}
+
+
+/*=====CARDS WRAPPER========*/
+
+.content {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 372px);
+
+    max-width: 70vw;
+}
+
+/*=======INPUT FORM========*/
+
+.input_form {
+    width: 360px;
+    background-color: #f8f8f2;
+    border: 5px solid #ff5555;
+    height: min-content;
+    padding: 32px 32px;
+    border-radius: 10px;
+
+    margin: 32px 0;
+
+}
+
+.input_form h1, .input_form h2 {
+    text-align: center;
+    color: #373F47;
+    margin: 15px;
+
+}
+
+.input_form h1 {
+    font-size: 32px;
+}
+
+.input_form h2 {
+    font-size: 24px;
+}
+
+.input_text {
+    border-bottom: 2px solid #373F47;
+    position: relative;
+    margin: 30px 5px;
+    width: 100%;
+}
+
+.input_text input,
+.input_text input:invalid {
+    font-size: 15px;
+    border: none;
+    width: 100%;
+    outline: none;
+    background: none;
+    padding: 0 5px;
+    height: 40px;
+    box-shadow: none;
+}
+
+.placeholder {
+    font-size: 15px;
+    opacity: .5;
+    color: #282a36;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    transition: 0.45s ease-in-out;
+    pointer-events: none;
+}
+
+.placeholder_focus {
+    font-size: 15px;
+    color: #282a36;
+    position: absolute;
+    left: 0;
+    top: 25%;
+    transition: 0.45s ease-in-out;
+    opacity: 1;
+    transform: translateY(-100%);
+    pointer-events: none;
+}
+
+.input_form .btn, .input_form .btn_width {
+    display: flex;
+    justify-content: center;
+}
+
+.input_form .btn button, .input_form .btn_width button {
+    color: #282a36;
+    border: 4px solid #282a36;
+    transition: 0.25s ease-in-out;
+    text-transform: uppercase;
+}
+
+.input_form .btn button:hover, .input_form .btn_width button:hover {
+    border: none;
+    background-color: #282a36;
+    color: #f8f8f2;
+    cursor: pointer;
+}
+
+.bottom_text {
+    margin-top: 48px;
+    text-align: center;
+    font-size: 16px;
+    color: #282a36;
+}
+
+.bottom_text a {
+    text-decoration: none;
+    outline: none;
+    color: #373F47;
+    font-weight: bold;
+}
+
+.bottom_text a:hover {
+    color: #6272a4;
+}
+
+.password_option {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #373F47;
+    margin: 5px;
+    padding: 0;
+
+    box-shadow: none;
+}
+
+.password_option:hover {
+    cursor: pointer;
+    color: #ff5555;
+}
+
+.password_input {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+}
+
+/*===========RADIO BUTTONS============+*/
+.input_select {
+    color: #373F47;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.input_select p {
+    text-align: center;
+}
+
+.input_radio {
+    color: inherit;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 16px;
+}
+
+.input_radio input[type="radio"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+
+    transition: 0.2s linear;
+    border: 3px solid #282a36;
+    background-color: #f8f8f2;
+}
+
+
+.input_radio input[type="radio"]:hover {
+    background: rgba(40, 42, 54, 0.75);
+    border: none;
+    cursor: pointer;
+}
+
+
+.input_radio input[type="radio"]:checked {
+    background-color: #282a36;
+    border: none;
+}
+
+.options label {
+    font-weight: 600;
+    font-size: 16px;
+    text-align: center;
+}
+
+
+/*===========INFO CARD============+*/
+
+.info_card {
+    margin: 12px 24px 12px;
+
+    background-color: #f8f8f2;
+    border-radius: 5px;
+
+    max-height: 496px;
+    max-width: 324px;
+
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.55);
+}
+
+@media screen and (max-width: 981px) {
+    .content {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+
+        flex-shrink: 1;
+        max-width: 70vw;
+    }
+
+}
+
+.info_card h1 {
+    margin: 25px 0;
+    color: #282a36;
+    text-transform: uppercase;
+}
+
+.info_card_content {
+    min-height: 256px;
+    background-color: #282a36;
+    padding: 25px;
+
+}
+
+.info_card_content p {
+    text-align: center;
+}
+
+.info_card .btn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.info_card .btn button {
+    color: #282a36;
+}
+
+.info_card .btn button:hover {
+    color: #f8f8f2;
+    border: none;
+    background-color: #282a36;
+}
+
+/*===========USER PROFILE=============*/
+
+.user_profile {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #f8f8f2;
+    width: 70vw;
+    max-width: 1024px;
+    margin: 20px;
+    min-height: 512px;
+
+    border-radius: 5px;
+
+}
+
+.left_block h1, .left_block h2, .left_block p {
+    color: #282a36;
+}
+
+.left_block {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: baseline;
+    flex-wrap: wrap;
+    border-radius: inherit;
+    margin: 0;
+
+    background-color: #ff5555;
+
+    max-height: 100%;
+    width: 256px;
+
+    transition: 0.3s ease-in-out all;
+}
+
+.left_block .user_data .btn {
+    margin-bottom: 5px;
+    margin-top: 5px;
+    margin-left: 0;
+    width: 100%;
+}
+
+.left_block .user_data .btn button {
+    width: 192px;
+    height: 48px;
+    font-size: 16px;
+    color: #282a36;
+    border: 4px solid #282a36;
+    transition: 0.25s ease-in-out;
+    text-transform: uppercase;
+}
+
+.left_block .user_data .btn button:hover {
+    border: none;
+    background-color: #282a36;
+    color: #f8f8f2;
+    cursor: pointer;
+}
+
+.user_data {
+    text-align: center;
+    background-color: #f8f8f2;
+    width: 90%;
+    height: 95%;
+    margin: 5%;
+    border-radius: 5px;
+}
+
+.right_block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: calc(100% - 256px);
+}
+
+.change_form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 80%;
+}
+
+.change_form h1, .change_form h3 {
+    text-align: center;
+    color: #282a36;
+}
+
+.change_form .btn button {
+    color: #282a36;
+    border: 4px solid #282a36;
+    transition: 0.25s ease-in-out;
+    text-transform: uppercase;
+}
+
+.change_form .btn button:hover {
+    border: none;
+    background-color: #282a36;
+    color: #f8f8f2;
+    cursor: pointer;
+}
+
+.change_form .input_text {
+    width: 80%;
+    margin: 15px;
+}
+
+@media screen and (max-width: 900px) {
+    /* width < 900 => */
+    .user_profile {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .left_block {
+        width: 100%;
+        min-height: 304px;
+        margin: 0;
+    }
+
+    .right_block {
+        width: 100%;
+    }
+
+    .user_data {
+        width: 95%;
+        height: 95%;
+        margin: 2.5%;
+    }
+
+}
+
+/*===========PASSWORD CARDS=============*/
+
+.passwords_container {
+    /*display: flex;*/
+    /*flex-direction: column;*/
+    /*justify-content: space-around;*/
+    /*align-items: center;*/
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 388px);
+    grid-template-rows: repeat(auto-fill, 160px);
+    /*grid-auto-columns: min-content;*/
+
+
+    max-width: 70vw;
+    min-height: 70vh;
+}
+
+@media screen and (max-width: 900px) {
+    .passwords_container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        flex-shrink: 0;
+        flex-grow: 1;
+        max-width: 70vw;
+    }
+
+}
+
+.password_card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    text-align: center;
+
+    background-color: #f8f8f2;
+
+    border-radius: 5px;
+
+    width: 372px;
+    height: 128px;
+
+
+    margin: 16px;
+
+    transition: 0.25s linear all;
+
+}
+
+.password_card:hover {
+    box-shadow: 0 2px 10px 0 #f8f8f2;
+}
+
+.password_field {
+    margin: 15px;
+    color: #373F47;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+.password_card h1, .password_card h2, .password_card .edit input {
+    margin: 5px;
+    width: 90%;
+    color: #373F47;
+    text-align: center;
+
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+.password_card .edit input {
+    appearance: none;
+    border: 1px solid #ff5555;
+    border-radius: 5px;
+}
+
+.password_card h1 {
+    font-size: 24px;
+}
+
+.password_card h2 {
+    font-size: 16px;
+}
+
+.password_card .edit {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+}
+
+.password_card .password_title {
+    height: 32px;
+    width: 100%;
+}
+
+.password_card .password_login {
+    height: 32px;
+    width: 100%;
+}
+
+.password_card .edit .delete_password {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+
+.password_field {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+
+}
+
+.password_field input {
+    margin: 0 10px 0;
+    width: 60%;
+    text-align: center;
+    border: none;
+    background: none;
+    font-size: 14px;
+    color: #282a36;
+    outline: none;
+    height: 24px;
+    box-shadow: none;
+    border-bottom: 2px solid #373F47;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
+}
+
+.password_field button, .password_card button {
+    width: 24px;
+    height: 24px;
+    background: none;
+    border: none;
+    font-size: 16px;
+    color: #373F47;
+    margin: 5px;
+    padding: 0;
+
+    box-shadow: none;
+
+}
+
+.password_field button:hover, .password_card button:hover {
+    cursor: pointer;
+    color: #ff5555;
+}
+
+.copied_hidden {
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s ease-in-out all;
+}
+
+
+
+.copied_visible, .copied_hidden, .password_card .message{
+    visibility: visible;
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    border-radius: inherit;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(255, 85, 85, 0.25);
+    transition: 0.5s ease-in-out all;
+    pointer-events: none;
+
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+    /* Non-prefixed version, currently
+                                     supported by Chrome, Edge, Opera and Firefox */
+
+}
+
+.password_card .message {
+    background: rgba(0, 0, 0, 0.25);
+}
+
+.copied_hidden {
+    opacity: 0;
+}
+
+.copied_visible h1, .copied_hidden h1 {
+    color: #f8f8f2;
+    pointer-events: none
+}
+
+.add_password_button button {
+    border-radius: 5px;
+
+    width: 372px;
+    height: 128px;
+
+    border: none;
+    background-color: #f8f8f2;
+    margin: 16px;
+    padding: 0;
+    opacity: .5;
+    transition: 0.2s ease-in-out all;
+}
+
+
+.add_password_button button:hover {
+    opacity: .75;
+    cursor: pointer;
+}
+
+/*===========ADD PASSWORD POPUP=============*/
+
+.add_password_popup {
+    width: 100vw;
+    height: 100%; /* Fix this later*/;
+    margin: 0;
+    background: rgba(0, 0, 0, .5);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+}
+
+.add_password_popup .input_form {
+    width: 360px;
+    height: 512px;
+    margin: 128px 32px 32px;
+    padding: 32px 32px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.add_password_popup .input_form .btn_width button {
+    width: 288px;
+    font-size: 16px;
+}
+
+@media screen and (max-width: 650px) {
+
+    .add_password_popup {
+        height: 100vh; /* Fix this later*/
+    }
+
+    .add_password_popup .input_form {
+        width: 256px;
+        height: 512px;
+    }
+}
+
+.add_password_popup .close_button {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.add_password_popup .close_button button {
+    background: none;
+    margin: 5px;
+    padding: 0;
+    border: none;
+    font-size: 24px;
+}
+
+.add_password_popup .close_button button:hover {
+    color: #ff5555;
+    cursor: pointer;
+}
+
+/*===========ERROR =============*/
+.error {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #ff5555;
+    width: 100vw;
+    height: 75vh;
+}

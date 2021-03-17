@@ -1,0 +1,21 @@
+version: "3.0"
+
+services:
+  application:
+    build: ./
+    image: app
+    command: yarn launch
+    depends_on:
+      - db
+    links:
+      - "db:db"
+    ports:
+    - 3000:3000
+    volumes:
+    - ./:/usr/app
+  db:
+    image: postgres
+    environment:
+      - POSTGRES_USER=orm
+      - POSTGRES_DB=app
+      - POSTGRES_PASSWORD=1234
