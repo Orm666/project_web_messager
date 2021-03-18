@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "launch": "sequelize-cli db:migrate && nodemon -L",
-    "fuck": "sequelize-cli db:migrate:undo:all"
+    "undo_migrations": "sequelize-cli db:migrate:undo:all"
   },
   "dependencies": {
     "argon2": "^0.27.0",
