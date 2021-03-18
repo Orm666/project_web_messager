@@ -38,8 +38,11 @@ const registerStrategy = new LocalStrategy({
     passReqToCallback: true
 }, async (req, username, password, done) => {
 
+    if(!req.body.email) {
+        return done(null, false, {message: "No email"})
+    }
 
-    let exist = await isUserExist(username)
+    let exist = await isUserExist(username,req.body.email)
     if (!exist) {
         let newUser = await createNewUser(username, password, req.body.email)
         if (newUser) {

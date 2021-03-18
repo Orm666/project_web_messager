@@ -13,7 +13,7 @@ router.use((req, res, next) => {
 
 
 router.get('/api/users', async (req, res) => {
-    if(req.query.id) {
+    if (req.query.id) {
         let toID = Number(req.query.id)
         let user = await findUserById(toID)
         if (user) {
@@ -26,7 +26,7 @@ router.get('/api/users', async (req, res) => {
             })
         }
     } else {
-        if(req.user) {
+        if (req.user) {
             res.send({
                 result: req.user.id
             })
@@ -79,13 +79,12 @@ router.get('/api/messages', passport.authenticate('cookie', {
     failureFlash: true
 }), async (req, res) => {
     let id = req.user.id
-    console.log(req.user)
     let toId;
-    if(req.query.id) {
+    if (req.query.id) {
         toId = Number(req.query.id)
-    } else if(req.query.name) {
+    } else if (req.query.name) {
         let user = await findUser(req.query.name);
-        if(!user) {
+        if (!user) {
             res.send({
                 error: "No data"
             })
@@ -104,10 +103,12 @@ router.post('/api/messages', passport.authenticate('cookie', {
     failureFlash: true
 }), async (req, res) => {
     let message = req.body.message
-    let target = Number((await findUser(req.body.to)).id)
+    let sendToUser = await findUser(req.body.to)
+    if (!sendToUser) {
+        res.send({error: "No such user"})
+    }
+    let target = Number(sendToUser.id)
     let source = Number(req.user.id)
-
-    console.log(`Sended ${message} from ${source} to ${target}`)
 
     let result = await addMessage(message, source, target)
 

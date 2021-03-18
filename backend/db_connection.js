@@ -1,7 +1,7 @@
 const {Sequelize} = require('sequelize')
 const settings = require('./config/config.json').development
 const argon = require('argon2')
-const { Op } = require("sequelize");
+const {Op} = require("sequelize");
 
 const sequelize = new Sequelize(settings.database, settings.username, settings.password, {
     host: settings.host,
@@ -33,8 +33,15 @@ async function findUser(username) {
     })
 }
 
-async function isUserExist(username) {
-    let user = await findUser(username)
+async function isUserExist(username, email = null) {
+    let user = await userModel.findOne({
+        where: {
+            email: email
+        }
+    })
+    if (user) return true
+
+    user = await findUser(username)
     return (user !== undefined && user !== null)
 }
 

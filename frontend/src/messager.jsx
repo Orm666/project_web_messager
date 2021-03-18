@@ -29,7 +29,6 @@ export default class Messager extends Component {
         }).then(res => {
 
             res.json().then(data => {
-                console.log(data)
                 if(data.error) {
                     console.error("ERROR")
                     this.setState({
@@ -44,9 +43,17 @@ export default class Messager extends Component {
                 }
             }).catch(e => {
                 console.error((e))
+                this.setState({
+                    connect: false,
+                    logged: false
+                })
             })
         }).catch(e => {
             console.error((e))
+            this.setState({
+                connect: false,
+                logged: false
+            })
         })
 
 

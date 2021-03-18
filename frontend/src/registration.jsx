@@ -29,17 +29,19 @@ export default class Registration extends Component {
             })
         }).then(res => {
             res.json().then(data => {
-                console.log(data)
                 if (data.error) {
                     console.error(data.error)
+                    alert(data.error)
                     this.setState({logged: false})
                 } else {
                     this.setState({logged: true})
                 }
             }).catch(e => {
+                alert(e)
                 console.error((e))
             })
         }).catch(e => {
+            alert(e)
             console.error((e))
         })
     }

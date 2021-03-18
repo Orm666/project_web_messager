@@ -132,6 +132,12 @@ body {
     color: #C3C9E9;
 }
 
+a {
+    padding: 0px 10px;
+    text-decoration: none;
+    color: #C3C9E9;
+}
+
 .footer .links a:hover {
     color: #6C91C2;
 }

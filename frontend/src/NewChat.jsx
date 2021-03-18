@@ -35,9 +35,11 @@ export default class NewChat extends Component {
                         alert(data.error)
                     }
                 }).catch(e => {
+                    alert(e)
                     console.error((e))
                 })
             }).catch(e => {
+                alert(e)
                 console.error((e))
             })
         }
@@ -88,7 +90,6 @@ export default class NewChat extends Component {
         }).then(res => {
 
             res.json().then(data => {
-                console.log(data)
                 if (data.error) {
                     console.error(data.error)
 
@@ -98,7 +99,6 @@ export default class NewChat extends Component {
                     })
 
                 } else {
-                    console.log(data)
                     this.setState({
                         messages: data
                     })
@@ -117,7 +117,6 @@ export default class NewChat extends Component {
 
                 {
                     this.state.messages ? this.state.messages.map(message => {
-                        console.log(message)
                         if (message.from === this.state.user_id) {
                             return (<Message key={message.id} text={message.message} sender={"Me"}/>)
                         } else {
